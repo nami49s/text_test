@@ -1,0 +1,30 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0px 10px;
+    z-index: 1000;
+}
+
+.header__inner {
+    margin: 0 ;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header__logo {
+    color: #6F4F37;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header__button {
+    background: #FFF8E1;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #6F4F37;
+}

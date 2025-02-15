@@ -1,0 +1,27 @@
+svg.w-5.h-5 {
+    width: 30px;
+    height: 30px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 適宜調整 */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        z-index: 1000;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+    margin-top: 100px;
+    /* ヘッダーの高さ分を確保 */
+}
