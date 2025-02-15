@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
     Route::get('/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::delete('/admin/contact/delete/{contactId}', [AdminController::class, 'destroy'])->name('admin.contact.delete');
+    Route::get('admin/contacts/export', [ContactController::class, 'export'])->name('admin.contacts.export');
 });
 
 // お問い合わせ関連

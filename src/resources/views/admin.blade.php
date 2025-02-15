@@ -47,8 +47,23 @@
                     <button type="submit">検索</button>
                     <button type="reset">リセット</button>
         </form>
+        <br>
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- エクスポートボタン -->
+                <form action="{{ route('admin.contacts.export') }}" method="GET">
+                    <input type="hidden" name="query" value="{{ request('query') }}">
+                    <input type="hidden" name="gender" value="{{ request('gender') }}">
+                    <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                    <input type="hidden" name="date" value="{{ request('date') }}">
+                    <button type="submit" class="btn btn-success">エクスポート</button>
+                </form>
+
+                <!-- ページネーション -->
+                <div class="pagination-container">
+                    {{ $contacts->appends(request()->input())->links('pagination::bootstrap-4') }}
+                </div>
+        </div>
         <div class="container mt-5">
-        <h2>Contacts List</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -90,10 +105,6 @@
                 @endforeach
             </tbody>
         </table>
-
-        <div class="d-flex justify-content-center">
-        {{ $contacts->appends(request()->input())->links('pagination::bootstrap-4') }}
-        </div>
     </div>
         @include('admin.modals.detail_modal')
 </main>
