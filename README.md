@@ -23,7 +23,7 @@ _ Laravel 8.83.29
 _ mysql 9.1.0
 
 ## ER図
-![ER図]()
+![ER図](https://raw.githubusercontent.com/nami49s/text_test/0dc2fa1418d20f1ac36f5dc8775e1569673dc0f0/contact_form.png)
 
 ## URL
 _ 開発環境:http://localhost/
