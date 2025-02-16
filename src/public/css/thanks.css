@@ -1,0 +1,68 @@
+/* ページ全体の高さを確保 */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* 背景を薄く画面いっぱいに表示 */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    /* 背景色を薄く */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rem;
+    color: #faf7f5;
+    font-weight: bold;
+    z-index: -1;
+    font-family: serif;
+    /* 背面に配置 */
+}
+
+/* h2 とホームボタンを中央に配置 */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 画面全体の高さ */
+    text-align: center;
+}
+
+/* h2 のデザイン */
+h2 {
+    font-size: 2rem;
+    color: #6F4F37;
+    margin-bottom: 20px;
+}
+
+/* ホームボタンのデザイン */
+.home-button {
+    text-align: center;
+}
+
+.home-button a {
+    text-decoration: none;
+}
+
+.home-button button {
+    padding: 10px 20px;
+    background-color: #6F4F37;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.home-button button:hover {
+    background-color: #6F4F37;
+}

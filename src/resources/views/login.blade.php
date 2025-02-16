@@ -23,25 +23,23 @@
         @if (session('success'))
             <p style="color: green;">{{ session('success') }}</p>
         @endif
-            <form action="{{ route('login') }}" method="POST">
+            <form class="form_container" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="input-group">
                 <label class="content_email" for="email">メールアドレス</label>
-                <input class="content_email-form" type="email" name="email" value="{{ old('email') }}">
+                <input class="content_email-form" type="email" name="email" value="{{ old('email') }}" placeholder="例: test@example.com">
                 @error('email')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
             </div>
             <div class="input-group">
                 <label class="content_password" for="password">パスワード</label>
-                <input class="content_password-form" type="password" name="password" value="{{ old('password') }}">
+                <input class="content_password-form" type="password" name="password" value="{{ old('password') }}" placeholder="例: coachtech">
                 @error('email')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="input-group">
                 <input class="content_submit" type="submit" value="ログイン">
-            </div>
             </form>
 </body>
 </html>

@@ -1,32 +1,76 @@
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* 適宜調整 */
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    z-index: 1000;
-}
-
-.create-container {
+body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    padding-top: 50px;
-    position: relative;
-    /* ヘッダーの高さ分を確保 */
 }
 
-.create-container h2 {
-    position: absolute;
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 24px;
-        font-weight: bold;
-    color: #333;
+.contact-container {
+    width: 100%;
+    margin-top: 30px;
+    padding: 120px;
+    background-color: #fff;
+}
+
+.contact-container h2 {
+    text-align: center;
+    font-family: serif;
+    color: #6F4F37;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form_container p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form_container label {
+    width: 20%;
+    text-align: left;
+}
+
+.form_container input:not(.content_submit),
+.form_container select,
+.form_container textarea {
+    width: 65%;
+    padding: 5px;
+    text-align: left;
+    background: #e6e4e4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.name-group {
+    display: flex;
+    width: 65%;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.name-group input {
+    width: 60%;
+    justify-content: right;
+}
+
+.content_submit {
+    width: 20%;
+    background: #6F4F37;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    position: static;
+    margin: 30px auto 0;
+    display: block;
 }

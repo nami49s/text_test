@@ -27,7 +27,7 @@
                 @csrf
             <div class="input-group">
                 <label class="content_name" for="name">お名前</label>
-                <input class="content_name-form" type="text" name="name">
+                <input class="content_name-form" type="text" name="name" placeholder="例: 山田太郎">
                 @error('name')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
@@ -35,7 +35,7 @@
                 <br>
             <div class="input-group">
                 <label class="content_email" for="email">メールアドレス</label>
-                <input class="content_email__form" type="email" name="email">
+                <input class="content_email__form" type="email" name="email" placeholder="例: test@example.com">
                 @error('email')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
@@ -43,7 +43,7 @@
                 <br>
             <div class="input-group">
                 <label class="content_pass" for="password">パスワード</label>
-                <input class="content_pass__form" type="password" name="password">
+                <input class="content_pass__form" type="password" name="password" placeholder="例: coachtech">
                 @error('password')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror

@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // お問い合わせ関連
-Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::get('/', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');
