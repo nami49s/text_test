@@ -6,6 +6,8 @@
     <title>Confirm</title>
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
+
 </head>
 <body>
     <header class="header">
@@ -13,24 +15,54 @@
             <div class="header__logo">
             FashionablyLate
             </div>
-            <h2>確認画面</h2>
-            <p>お名前: {{ $data['last_name'] }} {{ $data['first_name'] }}</p>
-            <p>性別:
-                @if ($data['gender'] == '1')
-                    男性
-                @elseif ($data['gender'] == '2')
-                    女性
-                @else
-                    その他
-                @endif
-            </p>
-            <p>メールアドレス: {{ $data['email'] }}</p>
-            <p>電話番号: {{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}</p>
-            <p>住所: {{ $data['address'] }}</p>
-            <p>建物名: {{ $data['building_name'] ?? 'なし' }}</p>
-            <p>お問い合わせの種類: {{ $data['category_name'] }}</p>
-            <p>お問い合わせ内容: {{ $data['textarea'] }}</p>
-
+        </div>
+    </header>
+    <div class="confirm-container">
+    <h2>Confirm</h2>
+        <table class="confirm-table">
+            <tr>
+                <th>お名前</th>
+                <td>{{ $data['last_name'] }} {{ $data['first_name'] }}</td>
+            </tr>
+            <tr>
+                <th>性別</th>
+                <td>
+                    @if ($data['gender'] == '1')
+                        男性
+                    @elseif ($data['gender'] == '2')
+                        女性
+                    @else
+                        その他
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <th>メールアドレス</th>
+                <td>{{ $data['email'] }}</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}</td>
+            </tr>
+            <tr>
+                <th>住所</th>
+                <td>{{ $data['address'] }}</td>
+            </tr>
+            <tr>
+                <th>建物名</th>
+                <td>{{ $data['building_name'] ?? 'なし' }}</td>
+            </tr>
+            <tr>
+                <th>お問い合わせの種類</th>
+                <td>{{ $data['category_name'] }}</td>
+            </tr>
+            <tr>
+                <th>お問い合わせ内容</th>
+                <td class="textarea-cell">{{ $data['textarea'] }}</td>
+            </tr>
+        </table>
+    </div>
+        <div class="button-container">
             <form action="{{ route('contact.store') }}" method="POST">
                 @csrf
                 @foreach ($data as $key => $value)
@@ -38,11 +70,10 @@
                 @endforeach
 
                 <input type="hidden" name="tel" value="{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}">
-                <button type="submit">送信</button>
+                <button type="submit" class="btn">送信</button>
             </form>
 
-            <button type="button" onclick="history.back()">修正する</button>
-
+            <button type="button" class="btn" onclick="history.back()">修正</button>
         </div>
 </body>
 </html>

@@ -36,6 +36,7 @@ body {
 .form_container label {
     width: 20%;
     text-align: left;
+    line-height: 1.5;
 }
 
 .form_container input:not(.content_submit),
@@ -52,14 +53,13 @@ body {
 
 .name-group {
     display: flex;
-    width: 65%;
-    gap: 50px;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 50%;
+    gap: 20px;
 }
 
 .name-group input {
-    width: 60%;
-    justify-content: right;
+    width: 50%;
 }
 
 .content_submit {
