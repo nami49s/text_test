@@ -63,7 +63,7 @@ class AdminController extends Controller
         // 結果をビューに渡して表示
         return view('admin', compact('contacts', 'categories'));
         }
-        
+       
         public function destroy($contactId)
         {
         $contact = Contact::findOrFail($contactId);

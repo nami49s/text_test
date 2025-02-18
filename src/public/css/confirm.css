@@ -28,12 +28,12 @@ body {
 }
 
 .confirm-table th {
-        border: 1px solid #f3ece7;
-        background-color: #e4d6cc;
-        width: 30%;
-        padding: 20px 50px;
-        text-align: left;
-        color: #fff;
+    border: 1px solid #f3ece7;
+    background-color: #e4d6cc;
+    width: 30%;
+    padding: 20px 50px;
+    text-align: left;
+    color: #fff;
     }
 
 .confirm-table td {

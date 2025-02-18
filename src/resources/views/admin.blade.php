@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -22,34 +20,34 @@
         </div>
     </header>
     <main>
-        <div class="admin-container">
-        <h2>Admin</h2>
-        <form action="{{ route('admin.search') }}" method="GET">
-        @csrf
-            <input type="text" name="query" placeholder="名前やメールアドレスを入力してください">
-            <select name="gender">
-                <option value="" disabled selected>性別</option>
-                <option value="1">男性</option>
-                <option value="2">女性</option>
-                <option value="3">その他</option>
-                <option value="all">全て</option>
-            </select>
-            <select name="category_id" required>
-            <option value="" disabled {{ old('category_id') === null ? 'selected' : '' }}>選択してください</option>
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}" {{ old('category_id', $data['category_id'] ?? null) == $category->id ? 'selected' : '' }}>
-                    {{ $category->name }}
-                </option>
-            @endforeach
-            </select>
-                <label for="date"></label>
-                    <input type="date" name="date" id="date">
-                    <button type="submit">検索</button>
-                    <button type="reset">リセット</button>
-        </form>
-        <br>
-        <div class="d-flex justify-content-between align-items-center">
-            <!-- エクスポートボタン -->
+        <div class="admin-container text-center">
+            <h2>Admin</h2>
+            <form action="{{ route('admin.search') }}" method="GET" class="search-form">
+                @csrf
+                <input type="text" name="query" placeholder="名前やメールアドレスを入力してください">
+                <select name="gender">
+                    <option value="" disabled selected>性別</option>
+                    <option value="1">男性</option>
+                    <option value="2">女性</option>
+                    <option value="3">その他</option>
+                    <option value="all">全て</option>
+                </select>
+                <select name="category_id" required>
+                    <option value="" disabled {{ old('category_id') === null ? 'selected' : '' }}>お問い合わせの種類</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id', $data['category_id'] ?? null) == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+                    <label for="date"></label>
+                        <input type="date" name="date" id="date">
+                        <button type="submit">検索</button>
+                        <button type="reset">リセット</button>
+            </form>
+        </div>
+        <div class="d-flex">
+            <div class="export-btn-container">
                 <form action="{{ route('admin.contacts.export') }}" method="GET">
                     <input type="hidden" name="query" value="{{ request('query') }}">
                     <input type="hidden" name="gender" value="{{ request('gender') }}">
@@ -57,10 +55,9 @@
                     <input type="hidden" name="date" value="{{ request('date') }}">
                     <button type="submit" class="btn btn-success">エクスポート</button>
                 </form>
-
-                <!-- ページネーション -->
+            </div>
                 <div class="pagination-container">
-                    {{ $contacts->appends(request()->input())->links('pagination::bootstrap-4') }}
+                    {{ $contacts->appends(request()->input())->links('vendor.pagination.bootstrap-4') }}
                 </div>
         </div>
         <div class="container mt-5">
@@ -72,6 +69,7 @@
                     <th>性別</th>
                     <th>メールアドレス</th>
                     <th>お問い合わせの種類</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -87,16 +85,16 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#detailModal"
                                 data-id="{{ $contact->id }}"
-                                data-first-name="{{ $contact->first_name }}"
-                                data-last-name="{{ $contact->last_name }}"
-                                data-gender="{{ $contact->gender }}"
+                                data-first_name="{{ $contact->first_name }}"
+                                data-last_name="{{ $contact->last_name }}"
+                                data-gender="{{ $contact->gender_text }}"
                                 data-email="{{ $contact->email }}"
                                 data-tel1="{{ $contact->tel1 }}"
                                 data-tel2="{{ $contact->tel2 }}"
                                 data-tel3="{{ $contact->tel3 }}"
                                 data-address="{{ $contact->address }}"
                                 data-building="{{ $contact->building }}"
-                                data-category_id="{{ $contact->category_id }}"
+                                data-category_id="{{ $contact->category_id_text }}"
                                 data-textarea="{{ $contact->textarea }}">
                                 詳細
                             </button>

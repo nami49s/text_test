@@ -18,7 +18,7 @@
         </div>
     </header>
     <div class="confirm-container">
-    <h2>Confirm</h2>
+        <h2>Confirm</h2>
         <table class="confirm-table">
             <tr>
                 <th>お名前</th>

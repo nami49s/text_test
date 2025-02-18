@@ -10,13 +10,13 @@
 <body>
     <div class="background">Thank you</div>
     <div class="wrapper">
-    <h2>お問い合せありがとうございました</h2>
+        <h2>お問い合せありがとうございました</h2>
 
-    <div class="home-button">
-        <a href="{{ route('contact.create') }}">
-        <button>HOME</button>
-        </a>
-    </div>
+        <div class="home-button">
+            <a href="{{ route('contact.create') }}">
+                <button>HOME</button>
+            </a>
+        </div>
     </div>
 </body>
 </html>
