@@ -17,8 +17,11 @@ main {
     margin: 0 auto;
     text-align: center;
     color: #6F4F37;
-    font-family: serif;
     position: relative;
+}
+
+.admin-container h2 {
+    font-family: serif;
 }
 
 .search-form {
@@ -47,6 +50,7 @@ main {
     border: 1px solid #ccc;
     outline: none;
     transition: all 0.3s ease;
+    color: #6F4F37;
 }
 
 .search-form input:focus,
