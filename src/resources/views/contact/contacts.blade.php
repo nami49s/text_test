@@ -54,9 +54,7 @@
             </p>
             <p>
                 <label class="content_tel" for="tel">電話番号<span style="color: red;">※</span></label>
-                <input type="text" name="tel1" maxlength="4" required value="{{ old('tel1', session('contact_data.tel1')) }}"  placeholder="080"> -
-                <input type="text" name="tel2" maxlength="4" required value="{{ old('tel2', session('contact_data.tel2')) }}"  placeholder="1234"> -
-                <input type="text" name="tel3" maxlength="4" required value="{{ old('tel3', session('contact_data.tel3')) }}"  placeholder="5678">
+                <input type="text" name="tel" maxlength="15" required value="{{ old('tel', session('contact_data.tel')) }}"  placeholder="080">
                 @error('tel')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror

@@ -95,7 +95,7 @@ class ContactController extends Controller
         $handle = fopen('php://output', 'w');
 
         // CSVのヘッダー行
-        fputcsv($handle, ['お名前（姓）', 'お名前（名）', '性別', 'メールアドレス', '電話番号1', '電話番号2', '電話番号3', '住所', '建物名', 'お問い合わせの種類', 'お問い合わせ内容']);
+        fputcsv($handle, ['お名前（姓）', 'お名前（名）', '性別', 'メールアドレス', '電話番号', '住所', '建物名', 'お問い合わせの種類', 'お問い合わせ内容']);
 
         // 各行のデータ
         foreach ($contacts as $contact) {
@@ -104,9 +104,7 @@ class ContactController extends Controller
                 $contact->last_name,
                 $contact->gender_text,
                 $contact->email,
-                $contact->tel1,
-                $contact->tel2,
-                $contact->tel3,
+                $contact->tel,
                 $contact->address,
                 $contact->building,
                 $contact->category_id_text,

@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td>{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}</td>
+                <td>{{ $data['tel'] }}</td>
             </tr>
             <tr>
                 <th>住所</th>
@@ -69,7 +69,7 @@
                     <input type="hidden" name="{{ $key }}" value="{{ $value }}">
                 @endforeach
 
-                <input type="hidden" name="tel" value="{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}">
+                <input type="hidden" name="tel" value="{{ $data['tel'] }}">
                 <button type="submit" class="btn">送信</button>
             </form>
 
